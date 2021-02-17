@@ -9,7 +9,7 @@ PNGFILE=`tempfile --directory='/tmp/qrencode' -p qr- -s .png`
 TXTFILE=`tempfile --directory='/tmp/qrencode' -p qrenc- -s .txt`
 xsel -b -o > $TXTFILE
 iconv -f utf-8 -t iso-8859-1 $TXTFILE -o $TXTFILE
-cat $TXTFILE | qrencode -o $PNGFILE -s 10
+cat $TXTFILE | qrencode -o $PNGFILE -s 5
 echo Contents:
 xsel -b -o
 echo
