@@ -20,4 +20,4 @@ echo
 echo 'Showing the QR code, press <ESC> to exit.'
 timeout 5s gwenview -f $PNGFILE
 rm $PNGFILE
-
+rm $TXTFILE
