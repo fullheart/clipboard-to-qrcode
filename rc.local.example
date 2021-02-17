@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo mkdir /tmp/qrencode
+sudo mount -t tmpfs node /tmp/qrencode
