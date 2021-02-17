@@ -10,3 +10,6 @@ make
 sudo make install
 sudo ldconfig
 
+echo '*-*-*-*-*-*-*-*-*'
+echo '⚠  For more SECURITY - outsource /tmp/ to RAM: Add this line to /etc/fstab'
+echo 'tmpfs   /tmp    tmpfs   nosuid  0       0'
