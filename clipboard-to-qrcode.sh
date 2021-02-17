@@ -9,12 +9,15 @@
 # make
 # sudo make install
 # sudo ldconfig
-FILE=`tempfile -p qr- -s .png`
-xsel -b -o | qrencode -o $FILE -s 10
+PNGFILE=`tempfile -p qr- -s .png`
+TXTFILE=`tempfile -p qrenc- -s .txt`
+xsel -b -o > $TXTFILE
+iconv -f utf-8 -t iso-8859-1 $TXTFILE -o $TXTFILE
+cat $TXTFILE | qrencode -o $PNGFILE -s 10
 echo Contents:
 xsel -b -o
 echo
 echo 'Showing the QR code, press <ESC> to exit.'
-timeout 5s display $FILE
-rm $FILE
+timeout 5s gwenview -f $PNGFILE
+rm $PNGFILE
 
